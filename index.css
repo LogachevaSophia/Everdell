@@ -1,0 +1,66 @@
+#statistic{
+    position: absolute;
+    background-color: rgb(133, 133, 192);
+}
+.container{
+    background-image: url('everdel.png');
+    height: 895px;
+    width: 780px;
+    margin: 0 auto;
+    background-color: bisque;
+    position: relative;
+}
+
+.glade{
+    position: absolute;
+    top: 500px;
+    left: 170px;
+    background-color: rgb(207, 128, 32);
+    height: 220px;
+    width: 410px;
+    text-align: center;
+}
+.state-location *{
+    position: absolute;
+    background-color: rgb(246, 14, 122);
+    height: 40px;
+    width: 47px;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+
+}
+.state-location #first{
+    top: 360px;
+    left: 60px;  
+}
+.state-location #second{
+    top: 352px;
+    left: 165px;
+}
+.state-location #fird{
+    top: 411px;
+    left: 214px;
+}
+.state-location #fourth{
+    top: 360px;
+    left: 309px;
+}
+.state-location #fifth{
+    top: 411px;
+    left: 368px;
+}
+.state-location #sixth{
+    top: 394px;
+    left: 471px;
+}
+.state-location #seventh{
+    top: 456px;
+    left: 553px;
+}
+.state-location #eightth{
+    top: 387px;
+    left: 632px;
+}
+
+
