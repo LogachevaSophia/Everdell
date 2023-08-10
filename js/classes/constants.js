@@ -161,7 +161,7 @@ const marks = [
   {
     id: 4,
     name: "Огонь",
-    svg: `<svg width="24" height="33" viewBox="0 0 24 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+    svg: `<svg width="24" height="24" viewBox="0 0 24 33" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g filter="url(#filter0_i_4_56)">
   <path d="M14.6015 10.2038C14.7843 14.9454 13.9143 17.2186 11.6946 21.0084C9.59127 24.6667 10.8937 26.9958 10.6045 31.4127L15.3283 22.2089C17.0135 18.3954 16.8757 14.7788 14.6015 10.2038Z" fill="#FF7A00"/>
   <path d="M17.1451 13.4052C18.962 16.6065 19.0643 20.0764 17.1451 22.2089C15.1987 25.0649 14.763 27.081 15.3283 31.4127C19.848 31.6129 23.0791 29.9674 22.9591 22.2089C23.3292 17.9071 21.1672 15.9943 17.1451 13.4052Z" fill="#FF7A00"/>
@@ -189,8 +189,8 @@ const marks = [
 
 const UnicCardDeck = [
   //колода
-  new CardBuilding([{ id: 1, count: 1 }], marks[0], 1, "Школа"),
-  new CardBuilding([{ id: 2, count: 1 }], marks[1], 1, "Ферма"),
-  new CardAnimal([{ id: 3, count: 2 }], marks[2], 1, "Учитель"),
-  new CardAnimal([{ id: 4, count: 1 }], marks[3], 1, "Фермер"),
+  new CardBuilding([{ id: 1, count: 1 },{ id: 4, count: 5}], marks[0], 1, "Школа", 1),
+  new CardBuilding([{ id: 2, count: 1 }], marks[1], 1, "Ферма",2),
+  new CardAnimal([{ id: 3, count: 2 }], marks[2], 1, "Учитель",3),
+  new CardAnimal([{ id: 4, count: 1 }], marks[3], 1, "Фермер",4),
 ];

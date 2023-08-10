@@ -68,7 +68,7 @@
     position: absolute;
     width: 774px;
 
-    background-color: brown;
+    /* background-color: brown; */
     top: 900px;
     left: 0px;
     display: flex;
@@ -77,10 +77,12 @@
 
 .cards__item{
     height: 270px;
-    width: 172px;
+    width: 167px;
     background-color: aqua;
     margin: 10px;
     position: relative;
+    border: 3px solid black;
+    cursor: pointer;
 
 }
 .item__title{
