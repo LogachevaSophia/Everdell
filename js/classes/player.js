@@ -51,6 +51,7 @@ class Player {
         
         console.log(elem);
         alert(elem.target.attributes[1].value);
+        nowGame.nextStep(); //ход у игрока заканчивается и начинается лсдеюущий у другого
       });
     }
   }
