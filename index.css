@@ -1,6 +1,7 @@
 #statistic{
     position: absolute;
     background-color: rgb(133, 133, 192);
+    z-index:300;
 }
 .container{
     background-image: url('everdel.png');
@@ -62,5 +63,50 @@
     top: 387px;
     left: 632px;
 }
+
+.cards-in-hand{
+    position: absolute;
+    width: 774px;
+
+    background-color: brown;
+    top: 900px;
+    left: 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cards__item{
+    height: 270px;
+    width: 172px;
+    background-color: aqua;
+    margin: 10px;
+    position: relative;
+
+}
+.item__title{
+    position: absolute;
+    top:150px;
+    text-align: center;
+    width: 100%;
+}
+.item__mark{
+    position: absolute;
+    background-color: brown;
+    border-radius: 31px;
+    padding:9px;
+}
+.item__cost{
+    position: absolute;
+    top: 60px;
+    display: flex;
+    justify-content: center; /*Центрирование по горизонтали*/
+    align-items: center;     /*Центрирование по вертикали */
+
+}
+.item__cost span{
+    margin-left: 5px;
+
+}
+
 
 

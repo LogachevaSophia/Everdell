@@ -3,10 +3,15 @@ function startgame() {
   players.forEach((element) => {
     element.startgame();
   });
-  //добавляем информацию о игроках на страницу
-  players[0].redrawstatistic();
 
-  const coutCardInDeck = 20;
+  
+
+  players[0].redrawstatistic(); //добавляем информацию о игроках на страницу
+
+  const coutCardInDeck = 20; // количество карт в колоде
+  const countCardInHand = 8; // количество карт на руке
+
+
   //создаем колоду карт
   var cards = [];
   for (let i = 0; i < coutCardInDeck; i++) {
@@ -16,10 +21,38 @@ function startgame() {
   
 
   //нужно раздать карты игрокам
-//   for (let i=0;i<)
+  for (let i=0;i<players.length;i++){
+    for (let j=0;j<countCardInHand;j++){
+      let ind = Math.floor(Math.random() * (cards.length - 0) + 0);
+      players[i].cards.push(cards[ind]); //на руки отдаем игроку
+      cards.slice(ind, 1); // убираем из колоды выбранную карту
+    }
+  }
+
+  drawCardInHand(0);
+
+
+
+
 
 
 }
+
+
+function drawCardInHand(indPlayer){
+  //отрисовка видимых карт с руки, на вход подается индекс игрока
+  let doccards = document.getElementsByClassName('cards-in-hand')[0];
+  doccards.innerHTML='';
+
+  for (let i=0;i<players[indPlayer].cards.length;i++){
+
+    doccards.innerHTML+=`${players[indPlayer].cards[i].drawcard()}`
+    
+  }
+
+}
+
+
 
 //инициализирование локаций статичных
 var StaticLocationarray = [];
