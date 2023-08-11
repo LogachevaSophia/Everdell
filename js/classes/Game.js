@@ -33,11 +33,19 @@ class Game {
     }
 
     this.players[this.nowStep].redrawCardInHand();
+    this.redrawNowStep();
   }
   nextStep() {
     this.nowStep =
       this.nowStep + 1 >= this.players.length ? 0 : this.nowStep + 1; //у меня массиво игроков [1,2,3] я иду по индексам
     this.players[this.nowStep].redrawstatistic();
     this.players[this.nowStep].redrawCardInHand();
+    this.players[this.nowStep].redrawBuildedCard();
+    this.redrawNowStep();
+  }
+  redrawNowStep(){
+    let nowStep = document.getElementById("nowStep");
+    nowStep.innerHTML = `Сейчас ходит ${this.players[this.nowStep].name}`;
+
   }
 }

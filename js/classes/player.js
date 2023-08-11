@@ -1,7 +1,7 @@
 class Player {
   constructor(name, id) {
     this.name = name;
-    this.id=id;
+    this.id = id;
   }
   startgame() {
     this.season = seasons[0];
@@ -17,6 +17,7 @@ class Player {
       { id: 4, count: 0 },
     ]; //будет в виде массива ресурсов: [{id: 1, count: 25}]
     this.cards = []; //массив всех карт
+    this.buildedcard = []; //построенные карты
   }
   redrawstatistic() {
     let statisticplayers = document.getElementById("statistic");
@@ -45,14 +46,45 @@ class Player {
     for (let i = 0; i < this.cards.length; i++) {
       doccards.innerHTML += `${this.cards[i].drawcard()}`;
     }
+
+    //навешиваем события на карты в руке
     for (let i = 0; i < this.cards.length; i++) {
       let elem = document.getElementsByClassName("cards__item")[i]; //получаем новый созданный элемент
       elem.addEventListener("click", (elem) => {
-        
-        console.log(elem);
-        alert(elem.target.attributes[1].value);
-        nowGame.nextStep(); //ход у игрока заканчивается и начинается лсдеюущий у другого
+        //alert(elem.target.attributes[1].value);
+
+        let ind = this.cards.findIndex(
+          (x) => x.id == elem.target.attributes[1].value
+        ); //индекс карты в руках у игрока
+        let canbuy = this.cards[ind].canBuy(this.id);
+        if (canbuy) {
+          this.cards[ind].buy(this.id);
+          this.addBuildedCard(this.cards[ind]); //добавляем карту 
+          this.cards.splice(ind, 1);
+          // this.redrawBuildedCard();
+          
+          nowGame.nextStep(); //ход у игрока заканчивается и начинается лсдеюущий у другого
+        } else {
+          alert("Недостаточно ресурсов");
+        }
       });
     }
+  }
+
+  addBuildedCard(card) {
+    this.buildedcard.push(card);
+  }
+
+  redrawBuildedCard() {
+    let el = document.getElementsByClassName("BuildedCards")[0];
+    el.innerHTML = "";
+    let s = '';
+
+    for (let i = 0; i < this.buildedcard.length; i++) {
+      s += this.buildedcard[i].drawcard();
+    }
+
+    el.innerHTML=s;
+
   }
 }

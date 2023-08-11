@@ -24,7 +24,7 @@ class Card {
       ); //если у игрока меньше, то false
       nowGame.players[indPlayer].resources[resource].count -= this.cost[i].count;
     }
-    nowGame.players[indPlayer].cards.push(this);
+    // nowGame.players[indPlayer].cards.push(this);
   }
   drawcard() {
     let s = `<div class="cards__item" numberId='${this.id}'>
